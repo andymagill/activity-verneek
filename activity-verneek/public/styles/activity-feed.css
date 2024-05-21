@@ -1,0 +1,53 @@
+.activity-feed {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .activity-feed h2 {
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  .personal-tab {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 8px;
+    background: #ddd;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+  
+  .comment, .reply, .image-post {
+    padding: 16px;
+    background: #fff;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  
+  .comment strong, .reply strong, .image-post strong {
+    color: #0077cc;
+  }
+  
+  .comment p, .reply span {
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  .image-post {
+    position: relative;
+  }
+  
+  .image-post::after {
+    content: '8h ago';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #eee;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+  }
