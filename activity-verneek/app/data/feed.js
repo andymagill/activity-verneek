@@ -1,5 +1,5 @@
 
-export async function FeedData() {
+export function FeedData() {
     // Sample data for the feed
     return [
       {

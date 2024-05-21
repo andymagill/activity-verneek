@@ -15,15 +15,15 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+html {
+  background: #47b599;
+}
 body {
+  min-height: 100vh;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: radial-gradient(farthest-side at top left, rgba(255, 0, 255, 0.67), transparent 100%), 
+  radial-gradient(farthest-corner at bottom right, rgba(255, 50, 50, 0.67), transparent 60%);
+  background-attachment: fixed;
 }
 
 @layer utilities {
