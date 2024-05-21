@@ -13,7 +13,8 @@ export async function FeedData() {
           name: 'Sora UI Kit',
           link: '/sora-ui-kit'
         },
-        type: 'comment'
+        type: 'comment',
+        taxonomy: 'Personal'
       },
       {
         id: 2,
@@ -23,7 +24,8 @@ export async function FeedData() {
         },
         content: 'Here is the link to download the Sora UI Kit.',
         link: 'https://supaui.com/download',
-        type: 'reply'
+        type: 'reply',
+        taxonomy: 'Personal'
       },
       {
         id: 3,
@@ -34,7 +36,31 @@ export async function FeedData() {
         content: 'generated new images on MidJourney',
         image: '/posts/headphones.jpg',
         time: '8h ago',
-        type: 'image-post'
+        type: 'image-post',
+        taxonomy: 'Personal'
+      },
+      // Fictitious content for additional activities
+      {
+        id: 4,
+        user: {
+          name: 'Mia',
+          avatar: '/avatars/mia.jpg'
+        },
+        content: 'Just finished a marathon coding session, check out my latest commit!',
+        link: 'https://github.com/andymagill',
+        type: 'update',
+        taxonomy: 'Team'
+      },
+      {
+        id: 5,
+        user: {
+          name: 'Carlos',
+          avatar: '/avatars/carlos.jpg'
+        },
+        content: 'Excited to share my first blog post on decentralized finance!',
+        link: 'https://carlos-finance-blog.com',
+        type: 'promotion',
+        taxonomy: 'Community'
       }
     ];
 }

@@ -1,7 +1,7 @@
 .activity-feed {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2rem;
     background: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -11,14 +11,23 @@
     color: #333;
     margin-bottom: 16px;
   }
-  
-  .personal-tab {
-    display: inline-block;
-    padding: 8px 16px;
-    margin-right: 8px;
-    background: #ddd;
-    border-radius: 16px;
-    cursor: pointer;
+  .notif-3 {
+    padding-right: 1.5rem;
+  }
+  .notif-3::after {
+    padding: 2px 3px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+
+    background: #cb3f19;
+    color: white;
+    content: attr(data-notif);
+    border-radius: 2px;
+    padding: 0 3px;
+    font-size: 66%;
+    line-height: 1.67;
+
   }
   
   .comment, .reply, .image-post {

@@ -1,13 +1,18 @@
 // components/filters.js
 
-export async function Filters() {
+const Filters = ({ activeTab, setActiveTab }) => {
 
   return (
-    <div className="filters">
-      <button>All Workspaces</button>
-      <button className="active">Personal</button>
-      <button className="notif-3">Team</button>
-      <button>Community</button>
+    <div className="filters flex gap-2 mb-4">
+        {['All Workspace', 'Personal', 'Team', 'Community'].map( tab => (
+          <button
+            key={tab}
+            className={`bg-gray-100 border-2 text-sm px-4 py-1 rounded-md ${activeTab === tab ? 'border-gray-200 text-black' :  'border-transparent text-gray-700' }`}
+            onClick={() => setActiveTab(tab)}
+          >
+            {tab}
+          </button>
+        ))}
     </div>
   )
 };
