@@ -16,13 +16,13 @@
   }
 }
 html {
-  background: #47b599;
+  background: #3eac90;
 }
 body {
   min-height: 100vh;
   color: rgb(var(--foreground-rgb));
-  background: radial-gradient(farthest-side at top left, rgba(255, 0, 255, 0.67), transparent 100%), 
-  radial-gradient(farthest-corner at bottom right, rgba(255, 50, 50, 0.67), transparent 60%);
+  background: radial-gradient(farthest-side at top left, rgba(255, 0, 238, 0.822), transparent ), 
+  radial-gradient(farthest-corner at bottom right, rgba(255, 111, 50, 0.76), transparent 60%);
   background-attachment: fixed;
 }
 

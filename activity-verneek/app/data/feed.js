@@ -6,7 +6,7 @@ export function FeedData() {
         id: 1,
         user: {
           name: 'Benjamin',
-          avatar: '/avatars/benjamin.jpg'
+          avatar: '/images/benjamin.svg'
         },
         content: 'What a good design! I like how you dealt with the spacing.',
         target: {
@@ -20,7 +20,7 @@ export function FeedData() {
         id: 2,
         user: {
           name: 'Alex',
-          avatar: '/avatars/alex.jpg'
+          avatar: '/images/alex.svg'
         },
         content: 'Here is the link to download the Sora UI Kit.',
         link: 'https://supaui.com/download',
@@ -31,10 +31,10 @@ export function FeedData() {
         id: 3,
         user: {
           name: 'Jacob',
-          avatar: '/avatars/jacob.jpg'
+          avatar: '/images/jacob.svg'
         },
         content: 'generated new images on MidJourney',
-        image: '/posts/headphones.jpg',
+        image: '/images/headphones.png',
         time: '8h ago',
         type: 'image-post',
         taxonomy: 'Personal'
@@ -44,7 +44,7 @@ export function FeedData() {
         id: 4,
         user: {
           name: 'Mia',
-          avatar: '/avatars/mia.jpg'
+          avatar: '/images/mia.svg'
         },
         content: 'Just finished a marathon coding session, check out my latest commit!',
         link: 'https://github.com/andymagill',
@@ -55,11 +55,11 @@ export function FeedData() {
         id: 5,
         user: {
           name: 'Carlos',
-          avatar: '/avatars/carlos.jpg'
+          avatar: '/images/carlos.svg'
         },
         content: 'Excited to share my first blog post on decentralized finance!',
         link: 'https://carlos-finance-blog.com',
-        type: 'promotion',
+        type: 'update',
         taxonomy: 'Community'
       }
     ];
