@@ -5,10 +5,21 @@ export function FeedData() {
       {
         id: 1,
         user: {
+          name: 'Jacob',
+          avatar: '/images/jacob.svg'
+        },
+        content: 'Checkout this article about the challenges to Web3 adoption',
+        link: 'https://google.com',
+        type: 'update',
+        taxonomy: 'team'
+      },
+      {
+        id: 2,
+        user: {
           name: 'Benjamin',
           avatar: '/images/benjamin.svg'
         },
-        content: 'What a good design! I like how you dealt with the spacing.',
+        content: 'What a good design! I like how you dealt with the spacing. Where can I get this file?',
         target: {
           name: 'Sora UI Kit',
           link: '/sora-ui-kit'
@@ -17,18 +28,17 @@ export function FeedData() {
         taxonomy: 'Personal'
       },
       {
-        id: 2,
+        id: 3,
         user: {
           name: 'Alex',
           avatar: '/images/alex.svg'
         },
-        content: 'Here is the link to download the Sora UI Kit.',
-        link: 'https://supaui.com/download',
+        content: '&gt;a href="#"&lt;@Benjamin&gt;/a&lt; here is the link &gt;a href="#"&lt;supaui.com/download&gt;/a&lt;',
         type: 'reply',
         taxonomy: 'Personal'
       },
       {
-        id: 3,
+        id: 4,
         user: {
           name: 'Jacob',
           avatar: '/images/jacob.svg'
@@ -41,7 +51,7 @@ export function FeedData() {
       },
       // Fictitious content for additional activities
       {
-        id: 4,
+        id: 5,
         user: {
           name: 'Mia',
           avatar: '/images/mia.svg'
@@ -52,7 +62,7 @@ export function FeedData() {
         taxonomy: 'Team'
       },
       {
-        id: 5,
+        id: 6,
         user: {
           name: 'Carlos',
           avatar: '/images/carlos.svg'

@@ -10,7 +10,7 @@ import Filters from "../components/filters.js";
 
 
 export function Feed() {
-  const [activeTab, setActiveTab] = useState('All Workspace');
+  const [activeTab, setActiveTab] = useState('Personal');
   const activities = Object.values(FeedData());
   const filteredActivities = activities.filter(activity => (activity.taxonomy === activeTab || activeTab == "All Workspace" ));
 

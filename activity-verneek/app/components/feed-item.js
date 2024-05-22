@@ -13,16 +13,16 @@ const FeedItem = ({ activity }) => {
               <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
               <strong>{activity.user.name}</strong> commented on <strong>{activity.target.name}</strong>
             </p>
-            <p className="ml-12 text-sm text-gray-600">{activity.content}</p>
+            <div className="ml-12 text-md text-gray-600">{activity.content}</div>
           </>
         );
 
       case 'reply':
         return (
-          <p className=" text-gray-600">
+          <div className=" text-gray-600">
             <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
-            <strong>{activity.user.name}</strong> replied with a link: <a href={activity.link} className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Download here</a>
-          </p>
+            <div className="ml-12 text-sm text-gray-600">{activity.content}</div>
+          </div>
         );
 
       case 'image-post':
@@ -41,10 +41,13 @@ const FeedItem = ({ activity }) => {
 
       case 'update':
         return (
-          <p className=" text-gray-600">
-            <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-200 inline-block rounded-full mb-2 mr-2" />
-            <strong>{activity.user.name}</strong> updated their status: <a href={activity.link} className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">{activity.content}</a>
-          </p>
+          <>
+            <p className="text-gray-600">
+              <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-200 inline-block rounded-full mb-2 mr-2" />
+              <strong>{activity.user.name}</strong> updated their status:
+            </p>
+            <p><a href={activity.link} className="hover:text-blue-600 hover:underline" >{activity.content}</a></p>
+          </>
         );
 
       default:
