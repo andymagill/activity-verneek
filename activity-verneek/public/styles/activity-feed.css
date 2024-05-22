@@ -29,8 +29,10 @@
 }
 .activity-feed ,
 .activity-feed p ,
-.activity-feed span {
+.activity-feed span ,
+.activity-feed.darkMode img {
   transition: color 0.5s;
+  color: #3f3f3f;
 }
 .activity-feed.darkMode ,
 .activity-feed.darkMode p ,
