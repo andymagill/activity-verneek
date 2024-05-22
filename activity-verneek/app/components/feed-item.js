@@ -4,9 +4,15 @@ import Image from 'next/image';
 import { Markup } from 'interweave';
 import { polyfill } from 'interweave-ssr';
 
+import { fetchUsers , fetchReplies , fetchLikes } from "../data/activities.js";
+
 polyfill();
 
 const FeedItem = ({ activity }) => {
+
+  const users = Object.values( fetchUsers() );
+  console.log(users);
+
   // Helper function to render different types of activities
   const renderContent = () => {
     switch (activity.type) {
@@ -14,8 +20,8 @@ const FeedItem = ({ activity }) => {
         return (
           <>
             <p className="">
-              <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
-              <strong>{activity.user.name}</strong> commented on <a href={activity.target.link}><strong>{activity.target.name}</strong></a>
+              <Image src={users[activity.user].avatar} alt={`${users[activity.user].name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
+              <strong>{users[activity.user].name}</strong> commented on <a href={activity.target.link}><strong>{activity.target.name}</strong></a>
             </p>
             <div className="ml-12 text-md text-gray-600">
               <Markup content={activity.content} />
@@ -26,7 +32,7 @@ const FeedItem = ({ activity }) => {
       case 'reply':
         return (
           <div className="text-sm text-gray-600">
-            <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
+            <Image src={users[activity.user].avatar} alt={`${users[activity.user].name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
             <Markup content={activity.content} />
           </div>
         );
@@ -35,8 +41,8 @@ const FeedItem = ({ activity }) => {
         return (
           <>
             <p className="text-gray-600">
-              <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
-              <strong>{activity.user.name} </strong>
+              <Image src={users[activity.user].avatar} alt={`${users[activity.user].name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
+              <strong>{users[activity.user].name} </strong>
               <Markup content={activity.content} />
             </p>
 
@@ -48,7 +54,7 @@ const FeedItem = ({ activity }) => {
 
       default:
         return <p className=" text-gray-600">
-          <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
+          <Image src={users[activity.user].avatar} alt={`${users[activity.user].name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
           Unknown activity type
         </p>;
     }
