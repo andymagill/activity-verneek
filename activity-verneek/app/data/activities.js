@@ -31,15 +31,15 @@ export function fetchActivities() {
       },
       {
         id: 3,
-        user: 3,
+        user: 5,
         content: '<a href="#">@Benjamin</a> here is the link <a href="#">supaui.com/download</a>',
         type: 'reply',
         taxonomy: 'Personal'
       },
       {
         id: 4,
-        user: 4,
-        content: 'generated new images on MidJourney',
+        user: 3,
+        content: 'generated new images on <strong>MidJourney</strong>',
         image: '/images/headphones.png',
         time: '8h ago',
         type: 'image-post',

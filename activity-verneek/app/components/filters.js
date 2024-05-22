@@ -7,7 +7,7 @@ const Filters = ({ activeTab, setActiveTab }) => {
         {['All Workspace', 'Personal', 'Team', 'Community'].map( tab => (
           <button
             key={tab}
-            className={`bg-gray-100 border-2 text-sm px-4 py-1 rounded-md ${activeTab === tab ? 'border-gray-200 text-black' :  'border-transparent text-gray-700' }`}
+            className={`bg-gray-100 hover:bg-gray-200 border-2 text-sm px-4 py-1 rounded-md ${activeTab === tab ? 'border-gray-200 text-black' :  'border-transparent text-gray-700' }`}
             onClick={() => setActiveTab(tab)}
           >
             {tab}
