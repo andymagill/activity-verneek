@@ -121,7 +121,7 @@ export function fetchUsers() {
     {
       id: 5,
       name: 'Carlos',
-      avatar: '/images/Carlos.svg'
+      avatar: '/images/carlos.svg'
     }
   ];
 }
