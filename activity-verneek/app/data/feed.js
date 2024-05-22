@@ -1,4 +1,8 @@
 
+// ./data/feed.js
+
+// TODO: replace placholder data with database queries
+
 export function FeedData() {
     // Sample data for the feed
     return [
