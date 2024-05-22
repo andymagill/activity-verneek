@@ -54,7 +54,7 @@ export function fetchActivities() {
         taxonomy: 'Personal'
       },
       {
-        id: 5,
+        id: 6,
         user: 4,
         content: 'Just finished a marathon coding session, check out my latest commit!',
         link: 'https://github.com/andymagill',
@@ -66,7 +66,7 @@ export function fetchActivities() {
         taxonomy: 'Team'
       },
       {
-        id: 6,
+        id: 7,
         user: 2,
         content: 'generated new images on <strong>Stable Diffusion</strong>',
         image: '/images/headphones2.png',
@@ -75,7 +75,7 @@ export function fetchActivities() {
         taxonomy: 'Community'
       },
       {
-        id: 7,
+        id: 8,
         user: 3,
         content: 'Working my first blog post on decentralized finance!',
         link: '#',
