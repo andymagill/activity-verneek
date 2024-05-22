@@ -11,7 +11,6 @@ polyfill();
 const FeedItem = ({ activity }) => {
 
   const users = Object.values( fetchUsers() );
-  console.log(users);
 
   // Helper function to render different types of activities
   const renderContent = () => {
@@ -53,15 +52,15 @@ const FeedItem = ({ activity }) => {
         );
 
       default:
-        return <p className=" text-gray-600">
+        return <p className="text-gray-600">
           <Image src={users[activity.user].avatar} alt={`${users[activity.user].name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
-          Unknown activity type
+          <Markup content={activity.content} />
         </p>;
     }
   };
 
   return (
-    <div className="activity-item mt-4 p-4 rounded-lg bg-white">
+    <div className="activity-item mt-4 p-4 rounded-lg">
       {renderContent()}
     </div>
   );

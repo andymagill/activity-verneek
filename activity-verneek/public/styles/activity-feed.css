@@ -1,62 +1,119 @@
 /* ./styles/activity-feed.css */
 
 .activity-feed {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  .notif-3 {
-    padding-right: 1.5rem;
-  }
-  .activity-item span a {
-    color: #2563eb;
-  }
-  .notif-3::after {
-    padding: 2px 3px;
-    position: absolute;
-    top: 6px;
-    right: 6px;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.activity-feed > * {
+  position: relative;
+}
+.activity-feed::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
 
-    background: #cb3f19;
-    color: white;
-    content: attr(data-notif);
-    border-radius: 2px;
-    padding: 0 3px;
-    font-size: 66%;
-    line-height: 1.67;
+  width: 0;
+  content: "";
+  overflow: hidden;
+  transition: width 1.5s;
+  background: #333;
+}
+.activity-feed ,
+.activity-feed p ,
+.activity-feed span {
+  transition: color 1s;
+}
+.activity-feed.darkMode ,
+.activity-feed.darkMode p ,
+.activity-feed.darkMode span {
+  color: #efefef;
+}
+.activity-feed.darkMode::before {
+  width: 100%;
+}
+.notif-3 {
+  padding-right: 1.5rem;
+}
+.activity-item {
+  /* background: rgba(85, 85, 85, 0.1); */
+}
+.darkMode .activity-item {
+  transition: color 1s;
+}
+.activity-item span a {
+  color: #2165f8;
 
-  }
-  
-  .comment, .reply, .image-post {
-    padding: 16px;
-    background: #fff;
-    border-radius: 4px;
-    margin-bottom: 16px;
-  }
-  
-  .comment strong, .reply strong, .image-post strong {
-    color: #0077cc;
-  }
-  
-  .comment p, .reply span {
-    color: #555;
-    line-height: 1.4;
-  }
-  
-  .image-post {
-    position: relative;
-  }
-  
-  .image-post::after {
-    content: '8h ago';
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: #eee;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-  }
+}
+.activity-item.darkMode span a {
+  color: #6696ff;
+}
+.notif-3::after {
+  padding: 2px 3px;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+
+  background: #cb3f19;
+  color: white;
+  content: attr(data-notif);
+  border-radius: 2px;
+  padding: 0 3px;
+  font-size: 66%;
+  line-height: 1.67;
+}
+
+.comment,
+.reply,
+.image-post {
+  padding: 16px;
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.comment strong,
+.reply strong,
+.image-post strong {
+  color: #0077cc;
+}
+
+.comment p,
+.reply span {
+  color: #555;
+  line-height: 1.4;
+}
+
+.image-post {
+  position: relative;
+}
+
+.image-post::after {
+  content: "8h ago";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+.filters button {
+  background: rgba(85, 85, 85, 0.1);
+  color:#2e2e2e;
+  transition: color 0.2s;
+  border: 2px solid transparent;
+}
+.filters button.activeTab {
+  border: 2px solid rgba(128, 128, 128, 0.1)
+}
+.darkMode .filters button {
+  color:#efefef;
+}
