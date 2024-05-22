@@ -34,7 +34,8 @@
 }
 .activity-feed.darkMode ,
 .activity-feed.darkMode p ,
-.activity-feed.darkMode span {
+.activity-feed.darkMode span ,
+.activity-feed.darkMode img {
   color: #efefef;
 }
 .activity-feed.darkMode::before {
@@ -70,7 +71,7 @@
 /* activity type specific styles */
 .comment , 
 .image-post ,
-.likes {
+.liked {
   background-size: auto 32px;
   background-position: top 1em left 1em;
   background-repeat: no-repeat;
@@ -83,6 +84,10 @@
 }
 .likes {
   background-image: url(../images/hearts.svg);
+}
+
+.like-list img {
+  margin-right: -12px;
 }
 .comment p ,
 .reply span {
