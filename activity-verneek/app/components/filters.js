@@ -3,7 +3,7 @@
 const Filters = ({ activeTab, setActiveTab }) => {
 
   return (
-    <div className="filters flex gap-2 mb-4">
+    <div className="filters flex gap-2">
         {['All Workspace', 'Personal', 'Team', 'Community'].map( tab => (
           <button
             key={tab}

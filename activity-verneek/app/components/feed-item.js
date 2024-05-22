@@ -1,6 +1,10 @@
 // components/feed-item.js
 
 import Image from 'next/image';
+import { Markup } from 'interweave';
+import { polyfill } from 'interweave-ssr';
+
+polyfill();
 
 const FeedItem = ({ activity }) => {
   // Helper function to render different types of activities
@@ -11,42 +15,34 @@ const FeedItem = ({ activity }) => {
           <>
             <p className="">
               <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
-              <strong>{activity.user.name}</strong> commented on <strong>{activity.target.name}</strong>
+              <strong>{activity.user.name}</strong> commented on <a href={activity.target.link}><strong>{activity.target.name}</strong></a>
             </p>
-            <div className="ml-12 text-md text-gray-600">{activity.content}</div>
+            <div className="ml-12 text-md text-gray-600">
+              <Markup content={activity.content} />
+            </div>
           </>
         );
 
       case 'reply':
         return (
-          <div className=" text-gray-600">
+          <div className="text-sm text-gray-600">
             <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
-            <div className="ml-12 text-sm text-gray-600">{activity.content}</div>
+            <Markup content={activity.content} />
           </div>
         );
 
       case 'image-post':
         return (
           <>
-            <p className=" text-gray-600">
-              <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
-              <strong>{activity.user.name}</strong> posted an image
-            </p>
-
-            <div className="image-post relative mt-2">
-              <Image class="w-full rounded-xl" src={activity.image} alt="Posted image" width={200} height={100} className="rounded-lg" />
-            </div>
-          </>
-        );
-
-      case 'update':
-        return (
-          <>
             <p className="text-gray-600">
-              <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-200 inline-block rounded-full mb-2 mr-2" />
-              <strong>{activity.user.name}</strong> updated their status:
+              <Image src={activity.user.avatar} alt={`${activity.user.name}'s avatar`} width={40} height={40} className="bg-gray-100 inline-block rounded-full mb-2 mr-2" />
+              <strong>{activity.user.name} </strong>
+              <Markup content={activity.content} />
             </p>
-            <p><a href={activity.link} className="hover:text-blue-600 hover:underline" >{activity.content}</a></p>
+
+            <div className="image-post relative ml-8">
+              <Image src={activity.image} alt="Posted image" width={200} height={100} className="w-full rounded-xl" />
+            </div>
           </>
         );
 
@@ -59,7 +55,7 @@ const FeedItem = ({ activity }) => {
   };
 
   return (
-    <div className="activity-item mb-4 p-4 rounded-lg bg-white">
+    <div className="activity-item mt-4 p-4 rounded-lg bg-white">
       {renderContent()}
     </div>
   );

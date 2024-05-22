@@ -10,7 +10,11 @@ export function FeedData() {
         },
         content: 'Checkout this article about the challenges to Web3 adoption',
         link: 'https://google.com',
-        type: 'update',
+        target: {
+          name: 'Web3',
+          link: '#'
+        },
+        type: 'comment',
         taxonomy: 'team'
       },
       {
@@ -33,7 +37,7 @@ export function FeedData() {
           name: 'Alex',
           avatar: '/images/alex.svg'
         },
-        content: '&gt;a href="#"&lt;@Benjamin&gt;/a&lt; here is the link &gt;a href="#"&lt;supaui.com/download&gt;/a&lt;',
+        content: '<a href="#">@Benjamin</a> here is the link <a href="#">supaui.com/download</a>',
         type: 'reply',
         taxonomy: 'Personal'
       },
@@ -49,7 +53,6 @@ export function FeedData() {
         type: 'image-post',
         taxonomy: 'Personal'
       },
-      // Fictitious content for additional activities
       {
         id: 5,
         user: {
@@ -58,7 +61,11 @@ export function FeedData() {
         },
         content: 'Just finished a marathon coding session, check out my latest commit!',
         link: 'https://github.com/andymagill',
-        type: 'update',
+        target: {
+          name: 'Github',
+          link: 'https://github.com'
+        },
+        type: 'comment',
         taxonomy: 'Team'
       },
       {
@@ -67,9 +74,25 @@ export function FeedData() {
           name: 'Carlos',
           avatar: '/images/carlos.svg'
         },
-        content: 'Excited to share my first blog post on decentralized finance!',
+        content: 'generated new images on <strong>Stable Diffusion</strong>',
+        image: '/images/headphones2.png',
+        time: '8h ago',
+        type: 'image-post',
+        taxonomy: 'Team'
+      },
+      {
+        id: 7,
+        user: {
+          name: 'Carlos',
+          avatar: '/images/carlos.svg'
+        },
+        content: 'Working my first blog post on decentralized finance!',
         link: 'https://carlos-finance-blog.com',
-        type: 'update',
+        target: {
+          name: 'DeFi',
+          link: '#'
+        },
+        type: 'comment',
         taxonomy: 'Community'
       }
     ];

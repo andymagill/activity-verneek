@@ -16,6 +16,9 @@
   .notif-3 {
     padding-right: 1.5rem;
   }
+  .activity-item span a {
+    color: #2563eb;
+  }
   .notif-3::after {
     padding: 2px 3px;
     position: absolute;
