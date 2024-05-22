@@ -7,7 +7,7 @@ import BackButton from "../components/back-button.js"
 const FeedTop = ({ title }) => {
 
     return (
-        <div className="feed-heading flex justify-between gap-10 items-center p-1 mb-4">
+        <div className="feed-heading flex justify-between gap-10 items-center p-1 mx-3 mb-4 ">
             <BackButton />
 
             <h2 className="basis-full text-xl font-bold mb-0">{ title }</h2>

@@ -15,7 +15,7 @@ export function Feed() {
   const [isDarkMode, setDarkMode] = useState(false);
   const activities = Object.values( fetchActivities() );
   const filteredActivities = activities.filter(activity => (activity.taxonomy === activeTab || activeTab == "All Workspace" ));
-  const feedClasses = "activity-feed bg-white shadow rounded-lg p-6";
+  const feedClasses = "activity-feed rounded-lg";
 
   useEffect(() => {
     // Scroll handler
