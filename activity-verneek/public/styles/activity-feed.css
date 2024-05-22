@@ -4,7 +4,7 @@
   position: relative;
   max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 2rem 6rem 2rem;
   background: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -42,19 +42,6 @@
 .notif-3 {
   padding-right: 1.5rem;
 }
-.activity-item {
-  /* background: rgba(85, 85, 85, 0.1); */
-}
-.darkMode .activity-item {
-  transition: color 1s;
-}
-.activity-item span a {
-  color: #2165f8;
-
-}
-.activity-item.darkMode span a {
-  color: #6696ff;
-}
 .notif-3::after {
   padding: 2px 3px;
   position: absolute;
@@ -69,20 +56,45 @@
   font-size: 66%;
   line-height: 1.67;
 }
-
-.comment,
-.reply,
-.image-post {
-  padding: 16px;
-  background: #fff;
-  border-radius: 4px;
-  margin-bottom: 16px;
+.activity-item {
+  position: relative;
+  padding-left: 12%;
 }
-
-.comment strong,
-.reply strong,
-.image-post strong {
-  color: #0077cc;
+.comment , 
+.image-post ,
+.likes {
+  background-size: 36px;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+.comment {
+  background-image: url(../images/comment.svg);
+}
+.image-post {
+  background-image: url(../images/paperclip.svg);
+}
+.likes {
+  background-image: url(../images/hearts.svg);
+}
+.activity-item::before {
+  content: "";
+  position: absolute;
+  left: 7.25em;
+  top: 3.3em;
+  height: calc(100% - 3.3em);
+  width: 1px;
+  background: rgba(128, 128, 128, 0.2);
+}
+.darkMode .activity-item {
+  transition: color 1s;
+}
+.activity-item span a ,
+.activity-item span strong {
+  color: #1a6fd1;
+}
+.activity-item.darkMode span a ,
+.activity-item.darkMode span strong {
+  color: #4a9fff;
 }
 
 .comment p,
@@ -100,7 +112,7 @@
   position: absolute;
   top: 16px;
   right: 16px;
-  background: #eee;
+  background: rgb(128 128 128 / 10%);;
   padding: 2px 8px;
   border-radius: 12px;
   font-size: 0.75rem;
@@ -110,6 +122,8 @@
   color:#2e2e2e;
   transition: color 0.2s;
   border: 2px solid transparent;
+  white-space: nowrap;
+  white-space: nowrap;
 }
 .filters button.activeTab {
   border: 2px solid rgba(128, 128, 128, 0.1)
